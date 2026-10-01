@@ -1,4 +1,4 @@
-# Save current Process ID for the watchdog
+# Save current Process ID for the watchdog IT WORKED MY NIGGA!!!
 $PID | Out-File -FilePath (Join-Path $PSScriptRoot "shutdown.pid") -Force
 
 # ====================================================
