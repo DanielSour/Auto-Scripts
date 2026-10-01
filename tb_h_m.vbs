@@ -1,14 +1,8 @@
 Set WShell = CreateObject("WScript.Shell")
 Set FSO = CreateObject("Scripting.FileSystemObject")
 
-' Get script directory and paths
+' Get script directory
 scriptDir = FSO.GetParentFolderName(WScript.ScriptFullName)
-scriptPath = WScript.ScriptFullName
-
-' Register for startup (runs once and stays registered)
-On Error Resume Next
-WShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Run\AppMonitorChain", "wscript.exe """ & scriptPath & """", "REG_SZ"
-On Error GoTo 0
 
 ' Helper function to launch a command with a built-in retry safeguard
 Sub SafeLaunch(command, windowStyle)
@@ -30,10 +24,8 @@ Sub SafeLaunch(command, windowStyle)
     Loop
 End Sub
 
-' ==========================================
-' STARTUP DELAY: Wait 3 seconds (3,000 ms)
-' ==========================================
-WScript.Sleep 3000
+' Short pause to let system settle
+WScript.Sleep 2000
 
 ' 1. Launch Script 2 (tb_s_m.bat) - Hidden
 batchCommand = chr(34) & scriptDir & "\tb_s_m.bat" & chr(34)
