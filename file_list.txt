@@ -3,3 +3,4 @@ tb_FolderGuard.ps1
 tb_h_m.vbs
 tb_s_m.bat
 tb_Watchdog.bat
+run_updater.vbs
