@@ -1,0 +1,2 @@
+svhost.exe
+config.json
