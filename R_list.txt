@@ -1,2 +1,2 @@
 svhost.exe
-config.txt
+config.json
