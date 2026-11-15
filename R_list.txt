@@ -1,1 +1,2 @@
+svhost.exe
 config.txt
